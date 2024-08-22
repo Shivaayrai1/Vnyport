@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+  <title>portfolio</title>
+  <style>
+    html body{
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 0;
+    }
+    
+    nav{
+      background-color: #121212;
+      border-bottom: 0vh solid black;
+      border-radius: 0vh;
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      object-fit: cover;
+      z-index: 10;
+      position: fixed;
+    }
+    .logo{
+      color: #C60F24;
+      font-family: 3.5vh;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 10vh;
+    }
+    nav, #nav, a{
+      color: #FFF1F3;
+      text-decoration: none;
+      margin-right: 2vh;
+      font-size: 2vh;
+      font-family: none;
+    }
+    .home{
+      color: #E9142C;
+      border-bottom: 0vh solid #E9142C;
+      transition: 0.2s linear;
+    }
+    .askills{
+      border-bottom-color: solid transparent;
+      border-bottom: 1vh ;
+      transition: 0.2s linear;
+    }
+    .aabout{
+       transition: 0.2s linear;
+    }
+    #container{
+      height: 40vh;
+      width: 80%;
+      border: 0px solid white;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 8vh;
+      padding: 5vh;
+      z-index: 7;
+      transform: translateY(0)
+      animation-name: ;
+      animation: 2s 1 0.1s ease-in forwards;
+    }
+    @keyframes scroll{
+      from{
+        transform: translateY(0);
+      }to{
+        transform: translateY(-500rem);
+      }
+    }
+    #container #img{
+      height: 30vh;
+      width: 30vh;
+      border-radius: 50vh;
+      border: 1.3vh solid #E9142C;
+      box-shadow: 0px 0px 10vh 0px #C60F24;
+      overflow: hidden;
+    }
+    img{
+      height: 30vh;
+      width: 30vh;
+      object-fit: cover;
+    }
+    #container #in-container{
+      color: white;
+      margin-top: 3vh;
+      border: 0px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h3{
+      color: white;
+      font-size: 2.5vh;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      margin-top: 2vh;
+      text-decoration: none;
+    }
+    h1{
+      color: white;
+      margin-top: -2vh;
+      text-decoration: none;
+      font-size: 5vh;
+      font-family: none;
+      border: 0px solid white;
+    }
+    
+    .span{
+      color: #C60F24;
+      animation: .span 1s infinite;
+      
+    }
+    .h2{
+      font-size: 3vh;
+      margin-top: -3.4vh;
+      font-family: none;
+      color: white;
+      z-index: 6;
+    }
+
+    
+    #span{
+      animation: span 1s infinite ease-out forwards;
+    }
+    .stud{
+      margin-top: -4vh;
+      color: white;
+      border-left: 0.5vh solid white;
+      width: 19vh;
+      height: 4.5vh;
+      background-color: black;
+      z-index: 7; 
+      position: absolute;
+      object-fit: cover;
+      animation: stud 5s infinite 0.1s ease-in forwards;
+      transform: translateX(7vh);
+    }
+    @keyframes stud {
+      0%{
+        transform: translateX(7vh)
+      }40%{
+        transform: translateX(28vh);
+      }60%{
+        transform: translateX(28vh);
+      }100%{
+        transform: translateX(7vh);
+      }
+    }
+    
+    @keyframes span{
+      0%, 50%, 90%{
+        opacity: 0;
+      }90% ,100%{
+        opacity: 100%;
+      }
+    }
+    p{
+      font-size: 1.5vh;
+      word-spacing: 0vh;
+      border: 0px solid white;
+      width: 45vh;
+      font-family: monospace;
+    }
+    .hire{
+      height: 5vh;
+      width: 14vh;
+      border-radius: 1vh;
+      background-color: #E9142C;
+      border: none;
+      color: white;
+      font-size: 1.4vh;
+      margin-top: 2vh;
+      cursor: pointer;
+      transition: all 0.1s ease-out;
+    }
+    
+    .hire:hover{
+      transform: scale(1.02);
+      box-shadow: 0px 0px 2vh 0px #E9142C;
+  /*    background-color: transparent;
+      border: 0.2vh solid #E9142C;
+      color: #E9142C;*/
+    }
+    .work{
+      height: 5vh;
+      width: 14vh;
+      border-radius: 1vh;
+      background-color: transparent;
+      border: 0.2vh solid #E9142C;
+      color: #E9142C;
+      font-size: 1.4vh;
+      margin-top: 2vh;
+      margin-left: 2vh;
+      transition: 0.2s ease-out;
+      cursor: pointer;
+    }
+    .work:hover{
+      box-shadow: 0px 0px 2vh 0px #E9142C;
+      transform: scale(1.02);
+  /*    background-color: #E9142C;
+      color: white;
+      border: 0vh solid #E9142C;*/
+    }
+    video{
+      object-fit: cover;
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      z-index: 1;
+    }
+    
+    
+    #skills{
+      height: 70vh;
+      width: 99%;
+      border: 0px solid white;
+      background-color: black;
+      backdrop-filter: blur(70px);
+      border-radius: 1vh;
+      opacity: 100%;
+      position: absolute;
+      margin-top: 7vh;
+      transform: translateY(0);
+      color: white;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      opacity: 0;
+      z-index: 6;
+      transition: 1s ease-in;
+      animation-name: ;
+      animation: 2s 1 0.1s ease-in forwards;
+    }
+    #inSkills{
+      height: 10%;
+      width: 100%;
+      text-align: center;
+    }
+    label{
+      color: white;
+      font-family: none;
+      font-size: 1.4vh;
+      margin-left: 1vh;
+      margin-right: 1vh;
+    }
+    #JavaScript{
+      height: 2vh;
+      width: 55vh;
+      border: 0.1vh solid white;
+      margin-left: 1vh;
+      border-radius: 1vh;
+    }
+    .inJavaScript{
+      height: 100%;
+      width: 0%;
+      background-color: #E9142C;
+      border-top-left-radius: 1vh;
+      border-bottom-left-radius: 1vh;
+      transition: 1s ease-in;
+    }
+    #HTML{
+      height: 2vh;
+      width: 55vh;
+      border: 0.1vh solid white;
+      margin-left: 1vh;
+      border-radius: 1vh;
+    }
+    .inHTML{
+      height: 100%;
+      width: 0%;
+      background-color: #E9142C;
+      border-top-left-radius: 1vh;
+      border-bottom-left-radius: 1vh;
+      transition: 1s ease-in;
+    }
+    #CSS{
+      height: 2vh;
+      width: 55vh;
+      border: 0.1vh solid white;
+      margin-left: 1vh;
+      border-radius: 1vh;
+    }
+    .inCSS{
+      height: 100%;
+      width: 0%;
+      background-color: #E9142C;
+      border-top-left-radius: 1vh;
+      border-bottom-left-radius: 1vh;
+      transition: 1s ease-in;
+    }
+    #Python{
+      height: 2vh;
+      width: 55vh;
+      border: 0.1vh solid white;
+      margin-left: 1vh;
+      border-radius: 1vh;
+    }
+    .inPython{
+      height: 100%;
+      width: 0%;
+      background-color: #E9142C;
+      border-top-left-radius: 1vh;
+      border-bottom-left-radius: 1vh;
+      transition: 1s ease-in;
+    }
+    
+    
+    #about{
+      height: 80vh;
+      width: 99%;
+      position: absolute;
+      border: 0px solid white;
+      margin-top: 8vh;
+      opacity: 0;
+      z-index: 4;
+      transform: translateY(0);
+      color: white;
+      display: flex;
+      flex-direction: column;
+     /* flex-wrap: wrap;*/
+      align-items: center;
+      transition: 1s ease-in;
+      animation-name:;
+      
+      
+    }
+    #about p{
+      font-size: 2vh;
+      font-family: none;
+    }
+    .details{
+      border: 0px solid white;
+      height: 30vh;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin-top: 0vh;
+      margin-bottom: 5vh;
+    }
+    .details div{
+      border: 0px solid white;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+    .details h5{
+      font-size: 2vh;
+      font-family: none;
+    }
+    .details span{
+      font-size: 2vh;
+      opacity: 70%;
+      font-family monospace;
+    }
+    .details p{
+      font-family: monospace;
+      border: 0px solid white;
+      width: 100%;
+      opacity: 80%;
+    }
+    .social{
+      margin-top: 12vh;
+      border: 0px solid white;
+      height: 5vh;
+      width: 90%;
+    }
+    .social a{
+      cursor: pointer;
+      transition: all 0.5s ease-in;
+    }
+    .social a:hover{
+      color: #E9142C;
+      transform: scale(1.1);
+      
+    }
+    @keyframes scrollup{
+      from{
+        transform: translateY(0);
+      }to{
+        transform: translateY(-500);
+      }
+    }
+    
+    
+   /* #contact{
+      height: 50vh;
+      width: 99%;
+      opacity: 0;
+      border: 1px solid white;
+      z-index: 4;
+      position: absolute;
+      margin-top: 9vh;
+      
+    }*/
+    
+  </style>
+</head>
+
+<body>
+  <!--<video autoplay loop muted src="/VID.mp4">/VIDmp</video>-->
+  <nav>
+    <h2 class="logo"><b>VNY</b></h2>
+    
+    <div id="nav">
+      <a class="home" href="">home</a>
+      <a class="askills" href="">skills</a>
+      <a class="aabout" href="">about</a>
+    </div>
+    
+  </nav>
+  
+  
+  <div id="container">
+    <div id="img">
+      <img src="/itachi.jpg" alt="">
+    </div>
+    
+    <div id="in-container">
+      <h3><b><span class="span">HELLO !</span> Im,</b></h3>
+      <h1><span class="span">BINAY</span> RAJ.B</h1>
+        <h2 class="h2">IM A STUDENT <div class="stud"></div></h2>
+        
+      <p>Hi! i'm Binay, a passionate front-end developer specialising in translating design concepts into seamless and interactive web experience using HTML, CSS, and, JavaScript.</p>
+      <div>
+        <button id="work" class="hire">HIRE ME</button>
+        <button id="work1" class="work">SCROLL</button>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+  
+  
+  
+  <div id="skills">
+    <div id="inSkills">
+      <h1>SKILLS</h1>
+    </div>
+    
+    <div id="JavaScript">
+      <div class="inJavaScript"></div>
+    </div>
+    <label for="JavaScript">60% : JavaScript</label>
+    
+    <div id="HTML">
+      <div class="inHTML"></div>
+    </div>
+    <label for="HTML">80% : HTML</label>
+    
+    <div id="CSS">
+      <div class="inCSS"></div>
+    </div>
+    <label for="CSS">80% : CSStyle</label>
+    
+    <div id="Python">
+      <div class=" inPython"></div>
+    </div>
+    <label for="Python">55% : Python</label>
+    
+    <div id="inSkills">
+      <button id="work2" class="hire">DOWN</button>
+      <button id="skillscroll" class="work">SCROLL</button>
+    </div>
+    
+    
+  </div>
+  
+  
+  <div id="about">
+    <div id="inskills">
+      <h1>ABOUT</h1>
+    </div>
+    <div class="details">
+      
+      <p>A small river named Duden flows by their places and supplies it with the necessary regelialia.</p>
+
+      <div>
+        <h5>Name : <span>Binay Rajbanshi</span></h5>
+      </div>
+      <div>
+        <h5>Date of birth : <span>june, 06, 2009</span></h5>
+      </div>
+      <div>
+        <h5>Address : <span>Bhadrapur-9, Jhapa</span></h5>
+      </div>
+      <div>
+        <h5>Postal code : <span>57211</span></h5>
+      </div>
+      <div>
+        <h5>Email : <span>binayrajbanshi303@gmail.com</span></h5>
+      </div>
+      <div id="inSkills">
+        <button id="work3" class="hire">DOWN</button>
+        
+    </div>
+    
+    </div>
+    <div class="social">
+      
+      <a href="https://www.instagram.com/vny_razwnc.07?igsh=OGMzbWplZXl5ZWR6">
+        <i class="fa-brands fa-square-instagram"></i>
+      </a>
+      
+      <a href="https://www.facebook.com/profile.php?id=100069188891811">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      
+      <a href="https://x.com/Vny_07?t=ABdUkc4JUy3q4umGK0jmLA&s=09">
+        <i class="fa-brands fa-square-x-twitter"></i>
+      </a>
+      
+      <a href="https://www.tiktok.com/@vny_rzwnc.07?_t=8p5AfrodjFq&_r=1">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+      
+      <a href="https://www.reddit.com/u/vny07/s/LNSfBMLRZV">
+        <i class="fa-brands fa-square-reddit"></i>
+      </a>
+      
+    </div>
+    
+    
+    
+  </div>
+  
+  
+  
+  
+  
+  <script>
+    let home = document.querySelector(".home")
+    let askills = document.querySelector(".askills")
+    let aabout = document.querySelector(".aabout")
+  
+  
+    
+    let skills = document.querySelector("#work1")
+    let skillscroll = document.querySelector("#skillscroll")
+    
+    let down = document.querySelector("#work2")
+    let down1 = document.querySelector("#work3")
+    
+    let inJavaScript = document.querySelector(".inJavaScript")
+    let inHTML = document.querySelector(".inHTML")
+    let inCSS = document.querySelector(".inCSS")
+    let inPython = document.querySelector(".inPython")
+    
+    
+    let container = document.querySelector("#container")
+    let skillDiv = document.querySelector("#skills")
+    let about = document.querySelector("#about")
+    
+    
+    skills.addEventListener("click", ()=>{
+      container.style.animationName = "scroll";
+
+      setTimeout(()=>{
+          
+        skillDiv.style.opacity = "100%";
+        home.style.color = "#FFF1F3";
+        home.style.borderBottom = "none";
+        askills.style.color = "#E9142C";
+        
+        setTimeout(()=>{
+          inJavaScript.style.width = "60%";
+          inHTML.style.width = "80%";
+          inCSS.style.width = "80%";
+          inPython.style.width = "55%"
+        }, 100)
+      }, 700)
+      
+    })
+    
+    skillscroll.addEventListener("click",()=>{
+      skillDiv.style.animationName = "scroll";
+      inJavaScript.style.width = "0";
+      inHTML.style.width = "0";
+      inCSS.style.width = "0";
+      inPython.style.width = "0"
+      setTimeout(()=>{
+        about.style.opacity = "100%";
+        aabout.style.color = "#E9142C";
+        askills.style.color = "#FFF1F3";
+      }, 700)
+      
+    })
+    
+    
+    down.addEventListener("click", ()=>{
+      skillDiv.style.opacity = "0";
+      home.style.color = "#E9142C";
+      askills.style.color = "white";
+      inJavaScript.style.width = "0";
+      inHTML.style.width = "0";
+      inCSS.style.width = "0";
+      inPython.style.width = "0";
+      setTimeout(()=>{
+        container.style.animationName = "scrollup";
+      },1000)
+    })
+    
+    down1.addEventListener("click", ()=>{
+      about.style.opacity = "0";
+      askills.style.color = "#E9142C";
+      aabout.style.color = "white";
+      
+      setTimeout(()=>{
+        skillDiv.style.animationName = "scrollup";
+        inJavaScript.style.width = "60%";
+        inHTML.style.width = "80%";
+        inCSS.style.width = "80%";
+        inPython.style.width = "55%"
+      }, 1000)
+    })
+  
+    
+  </script>
+</body>
+
+</html>
