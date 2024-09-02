@@ -133,6 +133,23 @@
       font-family: none;
       color: white;
       z-index: 6;
+      position: relative;
+    }
+    .h2::before{
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      overflow: hidden;
+      border-right: 0.5vh solid white;
+      animation: h2 5s infinite 0.1s steps(10) forwards;
+    }
+    @keyframes h2{
+      0%{ width: 0;}
+      50%{ width: 100%;}
+      100%{ width: 0;}
     }
 
     
@@ -438,7 +455,7 @@
     <div id="in-container">
       <h3><b><span class="span">HELLO !</span> Im,</b></h3>
       <h1><span class="span">BINAY</span> RAJ.B</h1>
-        <h2 class="h2">IM A STUDENT <div class="stud"></div></h2>
+        <h2 data-text="IM A DEVELOPER" class="h2">IM A STUDENT</h2>
         
       <p>Hi! i'm Binay, a passionate front-end developer specialising in translating design concepts into seamless and interactive web experience using HTML, CSS, and, JavaScript.</p>
       <div>
