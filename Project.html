@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    html, body{
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+    }
+    .banner{
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .banner .slider{
+      position: absolute;
+      width: 18vw;
+      height: 22vw;
+      top: 10%;
+      left: calc(50% - 100px);
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      animation-name: ;
+      animation: 15s infinite linear forwards;
+      border-radius: 1vh;
+    }
+    @keyframes ani{
+      from{
+        transform: perspective(1000px) rotateY(0deg);
+      }to{
+        transform: perspective(1000px) rotateY(360deg);
+      }
+    }
+    .banner .slider .item{
+      position: absolute;
+      inset: 0 0 0 0;
+      transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg));
+      transition: 1s ease-in;
+      opacity: 0;
+      z-index: 4;
+      border-radius: 1vh;
+    }
+    .banner .slider .item img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    img{
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+    h1{
+      font-size: 17vw;
+      position: absolute;
+      color: white;
+      font-family: monospace;
+      font-weight: bold;
+      mix-blend-mode: difference;
+      z-index: 2;
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <img src="bg.jpg" alt="bg.jpg">
+    <div class="slider" style="--quantity: 6">
+      <div class="item i1" style="--position: 1">
+        <img src="i1.png" alt="">
+      </div>
+      <div class="item i2" style="--position: 2">
+        <img src="i2.png" alt="">
+      </div>
+      <div class="item i3" style="--position: 3">
+        <img src="i3.png" alt="">
+      </div>
+      <div class="item i4" style="--position: 4">
+        <img src="i4.png" alt="">
+      </div>
+      <div class="item i5" style="--position: 5">
+        <img src="i5.png" alt="">
+      </div>
+      <div class="item i6" style="--position: 6">
+        <img src="i6.png" alt="">
+      </div>
+      
+    </div>
+    <h1>ONLY CSS</h1>
+  </div>
+  
+  
+  
+  
+  
+  <script>
+    var slider = document.querySelector(".slider");
+    var item = document.querySelector(".item");
+    var i2 = document.querySelector(".i2");
+    var i3 = document.querySelector(".i3");
+    var i4 = document.querySelector(".i4");
+    var i5 = document.querySelector(".i5");
+    var i6 = document.querySelector(".i6");
+    
+    
+    setTimeout(()=>{
+      
+      item.style.transform = "rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px)";
+      item.style.opacity = "100%";
+      i2.style.transform = "rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px)";
+      i2.style.opacity = "100%";
+      i3.style.transform = "rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px)";
+      i3.style.opacity = "100%";
+      i4.style.transform = "rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px)";
+      i4.style.opacity = "100%";
+      i5.style.transform = "rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px)";
+      i5.style.opacity = "100%";
+      i6.style.transform = "rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px)";
+      i6.style.opacity = "100%";
+      setTimeout(()=>{
+        slider.style.animationName = "ani";
+      }, 1000)
+    }, 1000)
+    
+  </script>
+</body>
+
+</html>
